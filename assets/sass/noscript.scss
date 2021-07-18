@@ -3,45 +3,31 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
+@import 'libs/html-grid';
 
 /*
-	Lens by HTML5 UP
+	Landed by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Main */
+/* Loader */
 
-	#main {
-		opacity: 1 !important;
+	body.landing {
 
-		@if _misc(main-side) == 'left' {
-			left: 0 !important;
-		}
-		@else {
-			right: 0 !important;
-		}
-	}
+		&.is-preload {
 
-	body:before {
-		content: 'Javascript is disabled :(';
-		display: block;
-		position: absolute;
-		top: 50%;
-		width: calc(100% - #{_size(main)} * 0.333333333);
-		height: 4em;
-		margin-top: -2em;
-		color: mix(_palette(page-bg), #fff, 90%);
-		cursor: default;
-		font-size: 3em;
-		line-height: 4em;
-		text-align: center;
-		white-space: nowrap;
+			// Spinner (active)
 
-		@if _misc(main-side) == 'left' {
-			right: 0;
-		}
-		@else {
-			left: 0;
+				&:before {
+					display: none;
+				}
+
+			// Overlay (active)
+
+				&:after {
+					display: none;
+				}
+
 		}
 	}
